@@ -6,20 +6,14 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 const index = require('./routes/index');
+const oauth = require('./routes/oauth');
 const users = require('./routes/users');
-
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
-// clientID
-// clientSecret rsT_dihAyeHnSvecP0x8KN4d
-passport.use(new GoogleStrategy());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -30,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+app.use('/auth/google', oauth);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
