@@ -29,6 +29,8 @@ To find your ID and secret, visit this page :[Google Cloud Platform](https://con
 
 soon
 
+You can install the `sequelize-cli` package in your local by using -g (--global) instead of the -D (equivalent to using --save-dev).
+If not, you'll need to prefix every call to the `sequelize` command with `./node_modules/.bin`.
 
 ## Deployment
 
