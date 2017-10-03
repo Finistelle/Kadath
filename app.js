@@ -8,10 +8,13 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 
+//services
+require('./services/passport');
+
 // routes
 const index = require('./server/routes/index');
 const oauth = require('./server/routes/oauth');
-// const users = require('./server/routes/users');
+const user = require('./server/routes/user');
 
 const app = express();
 
@@ -38,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/auth/google', oauth);
-app.use('/users', users);
+app.use('/api/user', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
