@@ -7,9 +7,9 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-
+const models = require('./server/models');
 //services
-require('./services/passport');
+require('./services/passport')(passport, models.User);
 
 // routes
 const index = require('./server/routes/index');
