@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const keys = require('./config/keys');
 const models = require('./server/models');
 //services
-require('./services/passport')(passport, models.User);
+require('./services/passport')(passport, models.Users);
 
 // routes
 const index = require('./server/routes/index');

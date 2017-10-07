@@ -1,8 +1,8 @@
-const User = require('../models').User;
+const Users = require('../models').Users;
 
 module.exports = {
     create(req, res) {
-        return User
+        return Users
             .create({
                 googleId: req.body.googleId,
             })

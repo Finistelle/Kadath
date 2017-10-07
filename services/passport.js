@@ -25,12 +25,13 @@ module.exports = function(passport, user) {
         User.findOrCreate({
           where: { googleId: profile.id }
         }).spread((user, created) => {
-          console.log(
-            user.get({
+          let model = !created ? user : created;
+          done(
+            null,
+            model.get({
               plain: true
             })
           );
-          console.log(created);
         });
       }
     )
