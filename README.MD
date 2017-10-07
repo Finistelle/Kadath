@@ -17,11 +17,12 @@ DATABASE_URL=<dialect>://<username>:<password>@<host>:<port>/<database>
 ```
 
 If we're using `passport` and `GoogleStrategy` we will need to configure API keys. 
-Create a `config/keys.js` file in the root directory of your project. Add keys variables, for example :
+Create a `config/dev.js` file in the root directory of your project. Add keys variables, for example :
 ```
 module.exports = {
     googleClientID: 'yourGoogleID',
     googleClientSecret : 'yourGoogleSecret'
+    cookieKey: 'acookiekey'
 };
 ``` 
 To find your ID and secret, visit this page :[Google Cloud Platform](https://console.cloud.google.com/projectselector/home/dashboard)

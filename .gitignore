@@ -103,6 +103,4 @@ typings/
 # dotenv environment variables file
 .env
 
-
-/config/keys.js
-/.env
+/config/dev.js
