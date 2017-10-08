@@ -3,12 +3,12 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(module.filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(`${__dirname}/../config/config.json`);
+const config = require(`${__dirname}/../config/config.json`)[env];
 const db = {};
 require('dotenv').config();
 
 let sequelize;
-if (process.env[config.use_env_variable]) {
+if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
   sequelize = new Sequelize(
