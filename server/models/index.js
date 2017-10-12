@@ -9,7 +9,7 @@ require('dotenv').config();
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable]);
+  sequelize = new Sequelize(process.env[config.use_env_variable], { operatorsAliases: false });
 } else {
   sequelize = new Sequelize(
     config.database,
