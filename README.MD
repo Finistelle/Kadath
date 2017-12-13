@@ -13,7 +13,12 @@ If we're using an online database, we will need to replace the environment datab
 Create a `.env` file in the root directory of your project. 
 Add environment-specific variables on new lines :
 ```
-DATABASE_URL=<dialect>://<username>:<password>@<host>:<port>/<database>
+DATABASE_DEV_URL=<dialect>://<username>:<password>@<host>:<port>/<database>
+```
+or 
+
+```
+export DATABASE_DEV_URL=<dialect>://<username>:<password>@<host>:<port>/<database>
 ```
 
 If we're using `passport` and `GoogleStrategy` we will need to configure API keys. 
